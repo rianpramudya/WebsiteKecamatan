@@ -14,8 +14,8 @@ class BeritaController extends Controller
     public function index(): View
     {
         $semuaBerita = Berita::with('kategori')
-                            ->latest('published_at')
-                            ->paginate(9);
+            ->latest('published_at')
+            ->paginate(9);
 
         return view('berita.index', [
             'semuaBerita' => $semuaBerita
